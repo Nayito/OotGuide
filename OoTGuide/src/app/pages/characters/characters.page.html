@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Characters</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-card *ngFor="let c of characters">
+      <ion-card-header class="imgFix">
+        <img class="imgSize" src="{{c.img}}">
+      </ion-card-header>
+      <ion-card-title class="imgFix" [innerText]='c.title'></ion-card-title>
+
+      <ion-card-content [innerText]=c.desc></ion-card-content>
+      <ion-card-subtitle  class="imgFix, urlSize" [innerText]=c.url></ion-card-subtitle>
+    </ion-card>
+
+  </div>
+</ion-content>

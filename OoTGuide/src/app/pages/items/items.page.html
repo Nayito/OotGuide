@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Items</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-card *ngFor="let i of items">
+      <ion-card-header class="imgFix">
+        <img class="imgSize" src="{{i.img}}">
+      </ion-card-header>
+      <ion-card-title class="imgFix" [innerText]='i.title'></ion-card-title>
+
+      <ion-card-content [innerText]=i.desc></ion-card-content>
+      <ion-card-subtitle class="imgFix, urlSize" [innerText]=i.url></ion-card-subtitle>
+    </ion-card>
+
+  </div>
+</ion-content>
